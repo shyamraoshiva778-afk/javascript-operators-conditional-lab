@@ -24,6 +24,14 @@ This file tracks gaps found by comparing the workspace against `Build Project.md
 
 No pending work remains for the current goals.
 
+## GitHub Publish Note
+
+- Local git repository initialized and committed.
+- Remote configured: `https://github.com/shyamraoshiva778-afk/javascript-lab-operators-conditional-statements.git`
+- Push from this environment failed due network/auth restrictions.
+- Final pending action must be run from your local machine with internet and GitHub credentials:
+  - `git push -u origin main`
+
 ## Goal
 
 Match the exact repository goals defined in `Build Project.md` and `Landing Page PDR.md`.
