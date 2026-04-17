@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q10 — Armstrong Number</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <div class="container">
+    <div class="badge">Q10 · Math</div>
+    <h1 class="title">Armstrong <span class="accent">Number</span></h1>
+    <p class="subtitle">Check if a number equals the sum of its digits raised to the power of digit count</p>
+
+    <div class="card">
+      <div class="formula-box">
+        <span style="color:#555">153 = 1³ + 5³ + 3³ = 1 + 125 + 27 = 153 ✓</span>
+      </div>
+
+      <div class="input-group">
+        <label class="label">Enter Number</label>
+        <input type="number" id="inputNum" class="input" placeholder="e.g. 153" min="0"/>
+      </div>
+
+      <button class="btn" onclick="checkArmstrong()">
+        <span>Check</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+      </button>
+
+      <div class="output-box" id="output">
+        <span class="output-placeholder">Result will appear here...</span>
+      </div>
+
+      <div class="breakdown" id="breakdown" style="display:none;"></div>
+
+      <div class="known-box">
+        <span class="bom-label">Known Armstrong Numbers</span>
+        <div class="known-tags">
+          <span class="known-tag" onclick="quickCheck(1)">1</span>
+          <span class="known-tag" onclick="quickCheck(153)">153</span>
+          <span class="known-tag" onclick="quickCheck(370)">370</span>
+          <span class="known-tag" onclick="quickCheck(371)">371</span>
+          <span class="known-tag" onclick="quickCheck(407)">407</span>
+          <span class="known-tag" onclick="quickCheck(1634)">1634</span>
+          <span class="known-tag known-not" onclick="quickCheck(100)">100 ✗</span>
+          <span class="known-tag known-not" onclick="quickCheck(200)">200 ✗</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="../index.html" class="back-link">← Back to Home</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

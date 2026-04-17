@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q7 — Page Redirect System</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <div class="container">
+    <div class="badge">Q7 · BOM</div>
+    <h1 class="title">Page <span class="accent">Redirect</span> System</h1>
+    <p class="subtitle">Uses <code>window.confirm()</code> and <code>window.location</code> for navigation</p>
+
+    <div class="card">
+      <div class="sites-grid">
+        <div class="site-card" data-url="https://google.com" data-name="Google">
+          <div class="site-icon">G</div>
+          <span class="site-name">Google</span>
+          <span class="site-url">google.com</span>
+        </div>
+        <div class="site-card" data-url="https://github.com" data-name="GitHub">
+          <div class="site-icon">GH</div>
+          <span class="site-name">GitHub</span>
+          <span class="site-url">github.com</span>
+        </div>
+        <div class="site-card" data-url="https://stackoverflow.com" data-name="Stack Overflow">
+          <div class="site-icon">SO</div>
+          <span class="site-name">Stack Overflow</span>
+          <span class="site-url">stackoverflow.com</span>
+        </div>
+        <div class="site-card" data-url="https://mdn.web.docs.org" data-name="MDN Docs">
+          <div class="site-icon">MD</div>
+          <span class="site-name">MDN Docs</span>
+          <span class="site-url">developer.mozilla.org</span>
+        </div>
+      </div>
+
+      <div class="output-box" id="output">
+        <span class="output-placeholder">Click a site card to trigger redirect...</span>
+      </div>
+
+      <div class="bom-info">
+        <div class="bom-item">
+          <span class="bom-label">Current URL</span>
+          <span class="bom-val" id="currentUrl"></span>
+        </div>
+        <div class="bom-item">
+          <span class="bom-label">User Agent</span>
+          <span class="bom-val" id="userAgent"></span>
+        </div>
+        <div class="bom-item">
+          <span class="bom-label">Screen Resolution</span>
+          <span class="bom-val" id="screenRes"></span>
+        </div>
+      </div>
+    </div>
+
+    <a href="../index.html" class="back-link">← Back to Home</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

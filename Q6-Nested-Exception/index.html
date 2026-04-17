@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Q6 — Nested Exception Handling</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+  <div class="container">
+    <div class="badge">Q6</div>
+    <h1 class="title">Nested <span class="accent">Exception Handling</span></h1>
+    <p class="subtitle">Parse JSON input — handles invalid JSON with try...catch</p>
+
+    <div class="card">
+      <div class="input-group">
+        <label class="label">Enter JSON String</label>
+        <textarea
+          id="jsonInput"
+          class="input textarea"
+          placeholder='e.g. {"name":"John","age":25}'
+          rows="4"
+        ></textarea>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn" onclick="parseJSON()">
+          <span>Parse JSON</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5,3 19,12 5,21"/></svg>
+        </button>
+        <button class="btn btn-outline" onclick="loadSample(true)">Valid Sample</button>
+        <button class="btn btn-outline btn-error" onclick="loadSample(false)">Invalid Sample</button>
+      </div>
+
+      <div class="output-box" id="output">
+        <span class="output-placeholder">Parsed JSON will appear here...</span>
+      </div>
+
+      <div class="json-tree" id="jsonTree" style="display:none;"></div>
+      <div class="log-box"  id="logBox"  style="display:none;"></div>
+    </div>
+
+    <a href="../index.html" class="back-link">← Back to Home</a>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

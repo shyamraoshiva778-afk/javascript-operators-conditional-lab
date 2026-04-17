@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JS Lab — Operators & Conditional Statements</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- Background Layers -->
+  <div class="bg-base"></div>
+  <div class="bg-pattern"></div>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <span class="logo-bracket">{</span>
+          <span class="logo-text">JS</span>
+          <span class="logo-bracket">}</span>
+        </div>
+        <span class="nav-title">JS Lab</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#concepts" class="nav-link">Concepts</a>
+        <a href="#about" class="nav-link">About</a>
+      </div>
+
+      <div class="nav-actions">
+        <a
+          href="https://github.com/shyamraoshiva778-afk"
+          target="_blank"
+          class="nav-github"
+          aria-label="GitHub"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839
+            9.489.5.092.682-.217.682-.482
+            0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608
+            1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087
+            2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943
+            0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0
+            0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0
+            012.504.337c1.909-1.294 2.747-1.025
+            2.747-1.025.546 1.377.202 2.394.1 2.647.64.699
+            1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566
+            4.935.359.309.678.919.678 1.852 0 1.336-.012
+            2.415-.012 2.743 0 .267.18.578.688.48C19.138
+            20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+
+      <div class="hero-badge" data-aos="fade-down">
+        <span class="badge-dot"></span>
+        <span>JavaScript Lab · 12 Projects</span>
+      </div>
+
+      <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+        <span class="title-line">Operators &amp;</span>
+        <span class="title-line accent-line">Conditional</span>
+        <span class="title-line">Statements</span>
+      </h1>
+
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        A collection of <strong>12 interactive JavaScript projects</strong> —
+        each with its own UI, logic, and dark aesthetic. Built from scratch
+        using pure HTML, CSS &amp; JS.
+      </p>
+
+      <div class="hero-cta" data-aos="fade-up" data-aos-delay="300">
+        <a href="#projects" class="btn-primary">
+          <span>Explore Projects</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/>
+            <polyline points="12,5 19,12 12,19"/>
+          </svg>
+        </a>
+        <a
+          href="https://github.com/shyamraoshiva778-afk"
+          target="_blank"
+          class="btn-secondary"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865
+            8.166 6.839 9.489.5.092.682-.217.682-.482
+            0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608
+            1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087
+            2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943
+            0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0
+            0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0
+            012.504.337c1.909-1.294 2.747-1.025
+            2.747-1.025.546 1.377.202 2.394.1 2.647.64.699
+            1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566
+            4.935.359.309.678.919.678 1.852 0 1.336-.012
+            2.415-.012 2.743 0 .267.18.578.688.48C19.138
+            20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          <span>View on GitHub</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+        <div class="stat">
+          <span class="stat-num" data-target="12">0</span>
+          <span class="stat-lbl">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="48">0</span>
+          <span class="stat-lbl">Files</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-lbl">Languages</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-target="100">0</span>
+          <span class="stat-lbl">% Vanilla JS</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span class="scroll-text">scroll</span>
+    </div>
+  </section>
+
+  <!-- Concepts Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack">
+      <span class="tick-item">Loops</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Objects</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">try/catch</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Math.random()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">BOM</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">setInterval()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">JSON.parse()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">DOM Manipulation</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Exception Handling</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">String Methods</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Conditionals</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Math.pow()</span>
+      <span class="tick-sep">·</span>
+
+      <span class="tick-item">Loops</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Objects</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">try/catch</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Math.random()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">BOM</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">setInterval()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">JSON.parse()</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">DOM Manipulation</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Exception Handling</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">String Methods</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Conditionals</span>
+      <span class="tick-sep">·</span>
+      <span class="tick-item">Math.pow()</span>
+      <span class="tick-sep">·</span>
+    </div>
+  </div>
+
+  <!-- Filter Section -->
+  <section class="filter-section" id="projects">
+    <div class="section-inner">
+
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Projects</div>
+        <h2 class="section-title">
+          All <span class="accent">12</span> Challenges
+        </h2>
+        <p class="section-sub">
+          Click any card to open the interactive project
+        </p>
+      </div>
+
+      <div class="filter-bar" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="string">Strings</button>
+        <button class="filter-btn" data-filter="exception">Exceptions</button>
+        <button class="filter-btn" data-filter="bom">BOM</button>
+        <button class="filter-btn" data-filter="math">Math</button>
+        <button class="filter-btn" data-filter="mini">Mini Project</button>
+      </div>
+
+      <div class="search-wrap" data-aos="fade-up" data-aos-delay="150">
+        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Search projects..."
+          oninput="filterProjects()"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <div class="section-inner">
+
+      <div class="cards-grid" id="cardsGrid">
+
+        <article
+          class="project-card"
+          data-category="string"
+          data-aos="fade-up"
+          data-aos-delay="0"
+          onclick="openProject('Q1-Remove-Duplicates/index.html')"
+        >
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-num">01</div>
+            <div class="card-tags">
+              <span class="tag tag--string">String</span>
+            </div>
+          </div>
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0
+                0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9
+                21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Remove Duplicate Characters</h3>
+          <p class="card-desc">
+            Remove all duplicate characters from a string without using Set —
+            preserving first occurrence order.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Loops</span>
+            <span class="concept">Objects</span>
+            <span class="concept">Strings</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">example</span>
+              "programming" → "progamin"
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="string"
+          data-aos="fade-up"
+          data-aos-delay="50"
+          onclick="openProject('Q2-Character-Frequency/index.html')"
+        >
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-num">02</div>
+            <div class="card-tags">
+              <span class="tag tag--string">String</span>
+            </div>
+          </div>
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Character Frequency</h3>
+          <p class="card-desc">
+            Count how many times each character appears and display
+            results in <code>{char:count}</code> format.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Objects</span>
+            <span class="concept">Loops</span>
+            <span class="concept">Formatting</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">example</span>
+              "hello" → {h:1,e:1,l:2,o:1}
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="string"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          onclick="openProject('Q3-First-Non-Repeating/index.html')"
+        >
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-num">03</div>
+            <div class="card-tags">
+              <span class="tag tag--string">String</span>
+            </div>
+          </div>
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </div>
+          <h3 class="card-title">First Non-Repeating Character</h3>
+          <p class="card-desc">
+            Find the first character in a string that appears only once —
+            using a two-pass frequency map approach.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Two-pass Loops</span>
+            <span class="concept">Objects</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">example</span>
+              "javascript" → 'j'
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="string"
+          data-aos="fade-up"
+          data-aos-delay="150"
+          onclick="openProject('Q4-String-Compression/index.html')"
+        >
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-num">04</div>
+            <div class="card-tags">
+              <span class="tag tag--string">String</span>
+            </div>
+          </div>
+          <div class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <polyline points="4,14 10,14 10,20"/>
+              <polyline points="20,10 14,10 14,4"/>
+              <line x1="14" y1="10" x2="21" y2="3"/>
+              <line x1="3" y1="21" x2="10" y2="14"/>
+            </svg>
+          </div>
+          <h3 class="card-title">String Compression</h3>
+          <p class="card-desc">
+            Compress consecutive repeating characters using loops —
+            no built-in string tricks.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Nested Loops</span>
+            <span class="concept">Counters</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">example</span>
+              "aaabbc" → "a3b2c1"
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="exception"
+          data-aos="fade-up"
+          data-aos-delay="200"
+          onclick="openProject('Q5-Exception-Handling/index.html')"
+        >
+          <div class="card-glow card-glow--blue"></div>
+          <div class="card-top">
+            <div class="card-num">05</div>
+            <div class="card-tags">
+              <span class="tag tag--exception">Exception</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71
+                3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0
+                0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Exception Handling</h3>
+          <p class="card-desc">
+            Calculator with full error handling — invalid operators,
+            division by zero — using try/catch/finally.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">try/catch/finally</span>
+            <span class="concept">throw</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">handles</span>
+              Div by 0 · Invalid Op
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="exception"
+          data-aos="fade-up"
+          data-aos-delay="250"
+          onclick="openProject('Q6-Nested-Exception/index.html')"
+        >
+          <div class="card-glow card-glow--blue"></div>
+          <div class="card-top">
+            <div class="card-num">06</div>
+            <div class="card-tags">
+              <span class="tag tag--exception">Exception</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--blue">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <polyline points="16,18 22,12 16,6"/>
+              <polyline points="8,6 2,12 8,18"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Nested Exception Handling</h3>
+          <p class="card-desc">
+            Parse JSON input with nested try/catch blocks —
+            handles SyntaxErrors with a live syntax-highlighted tree.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">JSON.parse()</span>
+            <span class="concept">Nested try/catch</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">handles</span>
+              SyntaxError · Empty Input
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="bom"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          onclick="openProject('Q7-Page-Redirect/index.html')"
+        >
+          <div class="card-glow card-glow--purple"></div>
+          <div class="card-top">
+            <div class="card-num">07</div>
+            <div class="card-tags">
+              <span class="tag tag--bom">BOM</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2
+                2 0 0 1 2-2h6"/>
+              <polyline points="15,3 21,3 21,9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Page Redirect System</h3>
+          <p class="card-desc">
+            BOM-powered redirect system using window.confirm() and
+            window.location — shows live browser info.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">window.confirm()</span>
+            <span class="concept">window.location</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">uses</span>
+              BOM · navigator · screen
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="bom"
+          data-aos="fade-up"
+          data-aos-delay="350"
+          onclick="openProject('Q8-Digital-Clock/index.html')"
+        >
+          <div class="card-glow card-glow--purple"></div>
+          <div class="card-top">
+            <div class="card-num">08</div>
+            <div class="card-tags">
+              <span class="tag tag--bom">BOM</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--purple">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Digital Clock</h3>
+          <p class="card-desc">
+            Live clock powered by setInterval() — updates every second
+            with HH:MM:SS format and start/stop controls.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">setInterval()</span>
+            <span class="concept">Date Object</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">format</span>
+              HH:MM:SS · AM/PM
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="math"
+          data-aos="fade-up"
+          data-aos-delay="400"
+          onclick="openProject('Q9-Prime-Numbers/index.html')"
+        >
+          <div class="card-glow card-glow--orange"></div>
+          <div class="card-top">
+            <div class="card-num">09</div>
+            <div class="card-tags">
+              <span class="tag tag--math">Math</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--orange">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+              <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+              <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/>
+              <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Prime Numbers in Range</h3>
+          <p class="card-desc">
+            Find all prime numbers between two values using optimized
+            loop-based primality check with √n optimization.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Math.sqrt()</span>
+            <span class="concept">Nested Loops</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">range</span>
+              1 – 100 → 25 primes
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="math"
+          data-aos="fade-up"
+          data-aos-delay="450"
+          onclick="openProject('Q10-Armstrong-Number/index.html')"
+        >
+          <div class="card-glow card-glow--orange"></div>
+          <div class="card-top">
+            <div class="card-num">10</div>
+            <div class="card-tags">
+              <span class="tag tag--math">Math</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--orange">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <polygon points="12,2 15.09,8.26 22,9.27 17,14.14
+                18.18,21.02 12,17.77 5.82,21.02 7,14.14
+                2,9.27 8.91,8.26 12,2"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Armstrong Number</h3>
+          <p class="card-desc">
+            Check if a number equals the sum of its digits each raised
+            to the power of the total digit count.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Math.pow()</span>
+            <span class="concept">Digit Extraction</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">example</span>
+              153 = 1³+5³+3³ ✓
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card"
+          data-category="math"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          onclick="openProject('Q11-Password-Generator/index.html')"
+        >
+          <div class="card-glow card-glow--orange"></div>
+          <div class="card-top">
+            <div class="card-num">11</div>
+            <div class="card-tags">
+              <span class="tag tag--math">Math</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--orange">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Password Generator</h3>
+          <p class="card-desc">
+            Generate secure passwords with configurable length and
+            character sets — includes strength meter and copy feature.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">Math.random()</span>
+            <span class="concept">Fisher-Yates</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">output</span>
+              A9k#mP2x · strength meter
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="project-card project-card--featured"
+          data-category="mini"
+          data-aos="fade-up"
+          data-aos-delay="550"
+          onclick="openProject('Q12-Login-Attempt-System/index.html')"
+        >
+          <div class="card-glow card-glow--red"></div>
+          <div class="card-top">
+            <div class="card-num">12</div>
+            <div class="card-tags">
+              <span class="tag tag--mini">Mini Project</span>
+              <span class="tag tag--exception">Exception</span>
+              <span class="tag tag--bom">BOM</span>
+            </div>
+          </div>
+          <div class="card-icon card-icon--red">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Login Attempt System</h3>
+          <p class="card-desc">
+            Full mini-project — 3 attempt limit, error throwing, account
+            lock, attempt log with timestamps and reset system.
+          </p>
+          <div class="card-concepts">
+            <span class="concept">try/catch</span>
+            <span class="concept">throw</span>
+            <span class="concept">BOM</span>
+            <span class="concept">DOM</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-example">
+              <span class="ex-label">demo</span>
+              admin / 1234 · 3 attempts
+            </span>
+            <div class="card-arrow">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12,5 19,12 12,19"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="no-results" id="noResults" style="display:none;">
+        <span class="no-results-icon">⌀</span>
+        <p>No projects match your search.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Concepts Section -->
+  <section class="concepts-section" id="concepts">
+    <div class="section-inner">
+
+      <div class="section-header" data-aos="fade-up">
+        <div class="section-badge">Concepts</div>
+        <h2 class="section-title">
+          What You'll <span class="accent">Learn</span>
+        </h2>
+      </div>
+
+      <div class="concepts-grid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="concept-card">
+          <div class="concept-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <polyline points="16,18 22,12 16,6"/>
+              <polyline points="8,6 2,12 8,18"/>
+            </svg>
+          </div>
+          <h4 class="concept-title">String Manipulation</h4>
+          <p class="concept-desc">
+            Duplicates, frequency maps, compression, non-repeating char detection
+          </p>
+          <span class="concept-count">4 projects</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-icon concept-icon--blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71
+                3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0
+                0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <h4 class="concept-title">Exception Handling</h4>
+          <p class="concept-desc">
+            try/catch/finally, throw, nested exceptions, JSON parsing errors
+          </p>
+          <span class="concept-count">2 projects</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-icon concept-icon--purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h4 class="concept-title">Browser Object Model</h4>
+          <p class="concept-desc">
+            window, confirm, location, navigator, screen, setInterval
+          </p>
+          <span class="concept-count">2 projects</span>
+        </div>
+
+        <div class="concept-card">
+          <div class="concept-icon concept-icon--orange">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="2" x2="12" y2="6"/>
+              <line x1="12" y1="18" x2="12" y2="22"/>
+              <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/>
+              <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/>
+              <line x1="2" y1="12" x2="6" y2="12"/>
+              <line x1="18" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <h4 class="concept-title">Math &amp; Algorithms</h4>
+          <p class="concept-desc">
+            Math.random, Math.pow, Math.sqrt, primes, Armstrong, passwords
+          </p>
+          <span class="concept-count">3 projects</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-inner">
+
+      <div class="about-grid">
+
+        <div class="about-left" data-aos="fade-right">
+          <div class="section-badge">About</div>
+          <h2 class="section-title">
+            Pure Vanilla <span class="accent">JavaScript</span>
+          </h2>
+          <p class="about-desc">
+            Every project in this lab is built with zero dependencies —
+            no frameworks, no build tools. Just raw HTML, CSS, and JavaScript.
+            The goal: deeply understand JS fundamentals through building real,
+            interactive UIs.
+          </p>
+          <div class="tech-pills">
+            <span class="pill">HTML5</span>
+            <span class="pill">CSS3</span>
+            <span class="pill">Vanilla JS</span>
+            <span class="pill">JetBrains Mono</span>
+            <span class="pill">Google Fonts</span>
+          </div>
+        </div>
+
+        <div class="about-right" data-aos="fade-left" data-aos-delay="100">
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="dot-r"></span>
+                <span class="dot-y"></span>
+                <span class="dot-g"></span>
+              </div>
+              <span class="code-filename">script.js</span>
+            </div>
+            <pre class="code-body"><code><span class="c-kw">try</span> {
+  <span class="c-kw">const</span> result <span class="c-op">=</span> <span class="c-fn">calculate</span>(a, op, b);
+  <span class="c-fn">showOutput</span>(result);
+
+} <span class="c-kw">catch</span> (err) {
+  <span class="c-kw">throw new</span> <span class="c-cls">Error</span>(
+    err.message
+  );
+
+} <span class="c-kw">finally</span> {
+  <span class="c-fn">logExecution</span>(<span class="c-str">"complete"</span>);
+}</code></pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <span class="logo-bracket">{</span>
+          <span class="logo-text">JS</span>
+          <span class="logo-bracket">}</span>
+        </div>
+        <span class="footer-tagline">
+          JavaScript Operators &amp; Conditional Statements Lab
+        </span>
+      </div>
+
+      <div class="footer-links">
+        <a href="#hero" class="footer-link">Home</a>
+        <a href="#projects" class="footer-link">Projects</a>
+        <a href="#concepts" class="footer-link">Concepts</a>
+        <a href="#about" class="footer-link">About</a>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">
+          Built with pure HTML · CSS · JS &nbsp;·&nbsp; No frameworks
+        </span>
+        <span class="footer-copy">
+          12 Projects · 48 Files · 100% Vanilla
+        </span>
+        <span class="footer-copy">
+          Made by Kabali Gamer Developers
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" onclick="scrollToTop()"
+    aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.5">
+      <line x1="12" y1="19" x2="12" y2="5"/>
+      <polyline points="5,12 12,5 19,12"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
